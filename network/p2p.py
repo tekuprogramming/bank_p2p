@@ -224,3 +224,47 @@ class P2PNetwork:
 
         finally:
             con.close()
+
+
+    def bank_amount(self, client_ip: str = None):
+        """
+        gets amount of a bank accounts
+        :param client_ip:
+        :return: amount of the bank accounts
+        """
+        con = self.db.get_connection()
+
+        try:
+            cursor = con.cursor()
+            cursor.execute("""SELECT SUM(balance) FROM accounts""")
+            amount = cursor.fetchone()[0]
+            if amount is None:
+                amount = 0
+            return amount
+
+        except sqlite3.Error as e:
+            logger.error(f"Bank amount query error: {e}")
+            raise ValueError("Database query failed")
+
+        finally:
+            con.close()
+
+    def bank_number_of_clients(self, client_ip: str = None):
+        """
+        gets the number of bank accounts
+        :param client_ip:
+        :return: count of accounts in the bank
+        """
+        con = self.db.get_connection()
+        try:
+            cursor = con.cursor()
+            cursor.execute("""SELECT COUNT(*) FROM accounts""")
+            count = cursor.fetchone()[0]
+            return count
+
+        except sqlite3.Error as e:
+            logger.error(f"Bank number query error: {e}")
+            raise ValueError("Database query failed")
+
+        finally:
+            con.close()

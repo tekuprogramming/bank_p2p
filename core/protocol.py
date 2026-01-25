@@ -9,6 +9,9 @@ class BankProtocol:
         "AD": "deposit",
         "AW": "withdraw",
         "AB": "get_balance",
+        "AR": "remove_account",
+        "BA": "bank_amount",
+        "BN": "bank_number_of_clients"
     }
 
     @staticmethod
