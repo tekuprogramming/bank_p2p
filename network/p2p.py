@@ -1,4 +1,5 @@
 import socket
+import sqlite3
 import threading
 
 from db.database import DataBase
@@ -319,4 +320,5 @@ class P2PNetwork:
             con.close()
 
     def proxy_command(self, command, *args):
+
         pass
