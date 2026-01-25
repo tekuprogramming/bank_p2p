@@ -229,7 +229,7 @@ class P2PNetwork:
     def bank_amount(self, client_ip: str = None):
         """
         gets amount of a bank accounts
-        :param client_ip:
+        :param client_ip: IP of the client
         :return: amount of the bank accounts
         """
         con = self.db.get_connection()
@@ -252,7 +252,7 @@ class P2PNetwork:
     def bank_number_of_clients(self, client_ip: str = None):
         """
         gets the number of bank accounts
-        :param client_ip:
+        :param client_ip: IP of the client
         :return: count of accounts in the bank
         """
         con = self.db.get_connection()
@@ -268,3 +268,55 @@ class P2PNetwork:
 
         finally:
             con.close()
+
+    def remove_account(self, account_info: str, client_ip: str = None):
+        """
+        Removes an account from the bank
+        :param account_info: string in format number/bank code
+        :param client_ip: IP of the client
+        :return: result of the operation
+        """
+        if "/" not in account_info:
+            raise ValueError("Bank account info must contain '/' character")
+
+        account_number_str, bank_code = account_info.split("/", 1)
+
+        if bank_code != self.get_local_ip():
+            raise ValueError("Invalid bank code")
+
+        con = self.db.get_connection()
+
+        try:
+            cursor = con.cursor()
+
+            account_number = int(account_number_str)
+
+            cursor.execute(""" SELECT balance FROM accounts WHERE account_number = ? AND bank_code = ? """, (account_number_str, bank_code))
+            row = cursor.fetchone()
+            if row is None:
+                raise ValueError("Account not found")
+
+            balance = row[0]
+            if balance is None:
+                balance = 0
+
+            if balance > 0:
+                return "ER: Cannot delete bank account containing funds"
+
+            cursor.execute("""
+                DELETE from accounts
+                WHERE account_number = ? AND bank_code = ?
+                """, (account_number, bank_code))
+
+            con.commit()
+
+        except sqlite3.Error as e:
+            con.rollback()
+            logger.error(f"Account remove failed: {e}")
+            raise ValueError("Database query failed")
+
+        finally:
+            con.close()
+
+    def proxy_command(self, command, *args):
+        pass
