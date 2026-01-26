@@ -75,4 +75,76 @@ class DataBase:
             raise
         finally:
             conn.close()
+
+    def execute_query(self, query: str, params: tuple = None, fetch: bool = False) -> Any:
+        conn = self.get_connection()
+        try:
+            cursor = conn.cursor()
+            cursor.execute(query, params or ())
+            if fetch:
+                result = cursor.fetchall()
+            else:
+                result = cursor.lastrowid
+            conn.commit()
+            return result
+        except sqlite3.Error as e:
+            conn.rollback()
+            logger.error(f"Query execution error: {e}")
+            raise
+        finally:
             conn.close()
+    
+    def get_all_accounts(self) -> List[Dict]:
+        conn = self.get_connection()
+        try:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT account_number, bank_code, balance, is_active, 
+                       created_at, updated_at
+                FROM accounts
+                ORDER BY account_number
+            """)
+            rows = cursor.fetchall()
+            return [dict(row) for row in rows]
+        finally:
+            conn.close()
+    
+    def get_bank_statistics(self, bank_code: str) -> Dict:
+        conn = self.get_connection()
+        try:
+            cursor = conn.cursor()
+            
+            cursor.execute("""
+                SELECT COUNT(*) as total_accounts,
+                       SUM(CASE WHEN is_active = 1 THEN 1 ELSE 0 END) as active_accounts,
+                       SUM(balance) as total_balance,
+                       AVG(balance) as avg_balance,
+                       MAX(balance) as max_balance,
+                       MIN(balance) as min_balance
+                FROM accounts
+                WHERE bank_code = ?
+            """, (bank_code,))
+            
+            stats = dict(cursor.fetchone())
+            
+            cursor.execute("""
+                SELECT COUNT(*) as total_transactions
+                FROM transactions
+                WHERE bank_code = ?
+            """, (bank_code,))
+            
+            stats.update(dict(cursor.fetchone()))
+            
+            cursor.execute("""
+                SELECT COUNT(*) as known_banks,
+                       SUM(CASE WHEN is_active = 1 THEN 1 ELSE 0 END) as active_banks
+                FROM known_banks
+            """)
+            
+            stats.update(dict(cursor.fetchone()))
+            
+            return stats
+            
+        finally:
+            conn.close()
+
