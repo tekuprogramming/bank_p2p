@@ -440,7 +440,7 @@ class P2PNetwork:
         account_number_str, bank_code = account_info.split("/", 1)
 
         if bank_code != self.get_local_ip():
-            raise ValueError("Invalid bank code")
+            return self.proxy_command('AR', account_info, None, bank_code)
 
         con = self.db.get_connection()
 
@@ -449,7 +449,7 @@ class P2PNetwork:
 
             account_number = int(account_number_str)
 
-            cursor.execute(""" SELECT balance FROM accounts WHERE account_number = ? AND bank_code = ? """, (account_number_str, bank_code))
+            cursor.execute(""" SELECT balance FROM accounts WHERE account_number = ? AND bank_code = ? """, (account_number, bank_code))
             row = cursor.fetchone()
             if row is None:
                 raise ValueError("Account not found")
