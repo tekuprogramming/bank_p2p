@@ -177,10 +177,20 @@ class P2PNetwork:
 
     # BC
     def get_bank_code(self) -> str:
+        """
+        Gets bank code
+        :return: IP of the bank
+        """
         return self.bank_code
 
     # AC
     def create_account(self, initial_balance: str = "0.0", client_ip: str = None) -> str:
+        """
+        Creates an account with given initial balance
+        :param initial_balance: Account principal amount
+        :param client_ip: IP of the client
+        :return: Number of created account
+        """
         conn = self.db.get_connection()
         try:
             cursor = conn.cursor()
@@ -228,6 +238,13 @@ class P2PNetwork:
 
     # AD
     def deposit(self, account_info: str, amount_str: str, client_ip: str = None) -> None:
+        """
+        Deposits an amount into the account
+        :param account_info: String in format number/bank code
+        :param amount_str: Amount to be deposited into the account
+        :param client_ip: IP of the client
+        :return: If the user enters a different bank, it calls the method proxy_command
+        """
         if '/' not in account_info:
             raise ValueError("Invalid account format. Use: account_number/bank_code")
         
@@ -288,6 +305,13 @@ class P2PNetwork:
 
     # AW
     def withdraw(self, account_info: str, amount_str: str, client_ip: str = None) -> None:
+        """
+        Withdraws an amount from the account
+        :param account_info: String in format number/bank code
+        :param amount_str: Amount to withdraw from the account
+        :param client_ip: IP of the client
+        :return: If the user enters a different bank, it calls the method proxy_command
+        """
         if '/' not in account_info:
             raise ValueError("Invalid account format. Use: account_number/bank_code")
         
@@ -350,6 +374,12 @@ class P2PNetwork:
             conn.close()
 
     def get_balance(self, account_info: str, client_ip: str = None) -> str:
+        """
+        Gets the balance of the account
+        :param account_info: String in format number/bank code
+        :param client_ip: IP of the client
+        :return: returns the balance of the account
+        """
         if '/' not in account_info:
             raise ValueError("Invalid account format. Use: account_number/bank_code")
         
