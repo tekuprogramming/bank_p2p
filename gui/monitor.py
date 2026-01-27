@@ -8,9 +8,9 @@ from datetime import datetime
 from network.p2p import P2PNetwork
 from core.protocol import BankProtocol
 from db.database import DataBase
-from core.logger import setup_logging
+from core.logger import setup_core_logging  #_core
 
-logger = setup_logging()
+logger = setup_core_logging()   #_core
 
 
 class BankMonitorGUI(tk.Tk):
@@ -34,3 +34,9 @@ class BankMonitorGUI(tk.Tk):
 
         self.after(100, self.process_messages)
         self.after(self.update_interval, self.update_state)
+
+    def load_config(self):
+        pass
+
+    def create_widgets(self):
+        pass
