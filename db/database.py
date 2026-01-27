@@ -1,5 +1,8 @@
 import sqlite3
-from core.logger import setup_logging
+from core.logger import setup_core_logging
+from typing import List, Dict, Any  #nový
+
+logger = setup_core_logging()   #nový
 
 class DataBase:
     def __init__(self, db_path: str = "bank.db"):

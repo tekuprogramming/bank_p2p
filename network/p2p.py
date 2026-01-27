@@ -2,12 +2,14 @@ import socket
 import sqlite3
 import threading
 import queue
+from datetime import datetime   #nový
+from typing import Tuple, List, Dict  #nový
 
 from db.database import DataBase
 from core.protocol import BankProtocol
-from core.logger import setup_logging
+from core.logger import setup_core_logging
 
-logger = setup_logging()
+logger = setup_core_logging()
 
 
 class P2PNetwork:
@@ -18,7 +20,7 @@ class P2PNetwork:
         self.timeout = timeout
         self.is_running = False
 
-        self.db = Database()
+        self.db = DataBase()    # b -> B
         self.protocol = BankProtocol()
         self.server_socket = None
         self.active_connections = {}
