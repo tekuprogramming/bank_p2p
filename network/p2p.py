@@ -14,7 +14,7 @@ logger = setup_core_logging()
 
 class P2PNetwork:
 
-    def __init__(self, host: str = "0.0.0.0", port: int = 65525, timeout: int = 5):
+    def __init__(self, host: str = "0.0.0.0", port: int = 65525, timeout: int = 5, monitor_queue: queue.Queue = queue.Queue):
         self.host = host
         self.port = port
         self.timeout = timeout
@@ -27,7 +27,7 @@ class P2PNetwork:
         
         self.server_thread = None
         
-        self.gui_message_queue = queue.Queue()
+        self.gui_message_queue = monitor_queue
         
         self.bank_code = self.get_local_ip()
         
