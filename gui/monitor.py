@@ -23,8 +23,15 @@ HOST = config.get("p2p", "host", fallback="0.0.0.0")
 PORT = config.getint("p2p", "port", fallback=5000)
 
 class BankMonitorGUI(tk.Tk):
-
+    """
+    GUI application for monitoring a P2P bank node.
+    Manages node start/stop, displays status, and logs events.
+    """
     def __init__(self):
+        """
+        Initializes the main GUI window, widgets, and state.
+        Sets up the message queue, threading, and periodic refreshes.
+        """
         super().__init__()
 
         self.stop_btn = None
@@ -55,6 +62,10 @@ class BankMonitorGUI(tk.Tk):
         self.schedule_refresh(self.update_state, self.update_interval)
 
     def load_config(self):
+        """
+        Loads host and port configuration from config file.
+        Validates IP address and port using utility functions.
+        """
         self.bank_ip = HOST
         self.bank_port = PORT
 
@@ -64,6 +75,13 @@ class BankMonitorGUI(tk.Tk):
             logger.warning(f"Invalid port in config: {self.bank_port}")
 
     def create_widgets(self):
+        """
+        Creates all GUI widgets:
+        - Status labels
+        - Event log (scrolled text)
+        - Start/Stop buttons
+        Organizes layout using frames.
+        """
         top_frame = ttk.LabelFrame(self, text="Node Status")
         top_frame.pack(fill="x", padx=10, pady=5)
 
@@ -89,6 +107,10 @@ class BankMonitorGUI(tk.Tk):
         self.stop_btn.pack(side="left", padx=5)
 
     def process_messages(self):
+        """
+        Periodically checks the message queue and displays new messages
+        in the log. Scheduled recursively using Tkinter's `after`.
+        """
         while not self.message_queue.empty():
             message = self.message_queue.get()
             message_type = message.get("type")
@@ -99,6 +121,13 @@ class BankMonitorGUI(tk.Tk):
         self.after(100, self.process_messages)
 
     def add_log(self, message):
+        """
+        Adds a message to the scrolled text log and logs it
+        using the core logger.
+        
+        Args:
+            message (str): The message to log.
+        """
         self.log_text.configure(state="normal")
         self.log_text.insert("end", f"{message}\n")
         self.log_text.configure(state="disabled")
@@ -107,6 +136,10 @@ class BankMonitorGUI(tk.Tk):
         logger.info(message)
 
     def update_state(self):
+        """
+        Updates the node status label to RUNNING or STOPPED
+        based on `is_running` flag. Scheduled recursively.
+        """
         if self.is_running:
             self.status_label.config(text="RUNNING", foreground="green")
         else:
@@ -115,6 +148,11 @@ class BankMonitorGUI(tk.Tk):
         self.after(self.update_interval, self.update_state)
 
     def start_node(self):
+        """
+        Starts the P2P node in a separate thread.
+        Sets `is_running` to True and posts a start message
+        to the message queue.
+        """
         if self.is_running:
             return
 
@@ -131,6 +169,11 @@ class BankMonitorGUI(tk.Tk):
         self.message_queue.put(message)
 
     def stop_node(self):
+        """
+        Stops the P2P node if running.
+        Sets `is_running` to False and posts a stop message
+        to the message queue.
+        """
         if not self.is_running:
             return
 
@@ -144,6 +187,14 @@ class BankMonitorGUI(tk.Tk):
         self.message_queue.put(message)
 
     def schedule_refresh(self, func, interval_ms):
+        """
+        Helper method to call a function repeatedly at a given interval.
+
+        Args:
+            func (callable): Function to execute.
+            interval_ms (int): Interval in milliseconds between calls.
+        """
         func()
         self.after(interval_ms, lambda: self.schedule_refresh(func, interval_ms))
+
 
