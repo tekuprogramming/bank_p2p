@@ -13,8 +13,17 @@ logger = setup_core_logging()
 
 
 class P2PNetwork:
+    """
+    Represents a P2P bank network node.
+    Handles TCP connections, client commands, and database operations.
+    Supports proxying commands to other bank nodes.
+    """
 
     def __init__(self, host: str = "0.0.0.0", port: int = 65525, monitor_queue = None, timeout: int = 5):
+        """
+        Initializes the P2P node with host, port, timeout, and optional monitor queue.
+        Sets up the database, protocol handler, and active connections.
+        """
         self.host = host
         self.port = port
         self.monitor_queue = monitor_queue
@@ -35,6 +44,10 @@ class P2PNetwork:
         logger.info(f"Bank node initialized: {self.bank_code}:{self.port}")
 
     def get_local_ip(self) -> str:
+        """
+        Returns the local IP address of the machine.
+        Saves the IP as the bank code in config.ini.
+        """
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             s.connect(('8.8.8.8', 80))
@@ -55,6 +68,10 @@ class P2PNetwork:
             return '127.0.0.1'
 
     def start_server(self):
+        """
+        Starts the TCP server for the bank node.
+        Accepts incoming client connections and handles them in separate threads.
+        """
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         
@@ -93,6 +110,9 @@ class P2PNetwork:
             self.stop_server()
 
     def stop_server(self):
+        """
+        Stops the server, closes all active connections, and clears connection data.
+        """
         self.is_running = False
         if self.server_socket:
             self.server_socket.close()
@@ -108,6 +128,10 @@ class P2PNetwork:
         self.send_gui_message("INFO", "Server stopped") 
 
     def handle_client(self, client_socket: socket.socket, address: Tuple[str, int]):
+        """
+        Handles communication with a connected client.
+        Receives commands, processes them, sends responses, and updates connection status.
+        """
         client_ip, client_port = address
         connection_id = f"{client_ip}:{client_port}"
 
@@ -165,6 +189,10 @@ class P2PNetwork:
             self.send_gui_message("CONNECTION", f"Closed: {connection_id}")
 
     def process_command(self, command_str: str, client_ip: str = None) -> str:
+        """
+        Parses and executes a command received from a client.
+        Returns the formatted response string.
+        """
         command, args = self.protocol.parse_command(command_str)
         
         if command not in self.protocol.COMMANDS:
@@ -559,6 +587,7 @@ class P2PNetwork:
             con.close()
 
     def get_statistics(self, client_ip: str = None) -> Dict:
+      """Returns statistics about the bank, including active connections and bank code."""
         stats = self.db.get_bank_statistics(self.bank_code)
         
         stats['active_connections'] = len(self.active_connections)
@@ -569,9 +598,14 @@ class P2PNetwork:
         return stats
     
     def list_accounts(self, client_ip: str = None) -> List[Dict]:
+        """Returns a list of all accounts in the bank."""
         return self.db.get_all_accounts()
     
     def proxy_command(self, command: str, account_info: str, amount: str = None, target_bank: str = None) -> str:
+        """
+        Forwards a command to another bank node.
+        Handles TCP connection and returns the response.
+        """
         try:
             if ':' in target_bank:
                 bank_ip, bank_port_str = target_bank.split(':', 1)
@@ -611,14 +645,17 @@ class P2PNetwork:
             raise ValueError("Proxy operation failed")
 
     def proxy_deposit(self, account_info: str, amount: float) -> str:
+        """Proxies a deposit command to another bank node."""
         account_number_str, bank_code = account_info.split('/', 1)
         return self.proxy_command('AD', account_info, str(amount), bank_code)
     
     def proxy_withdraw(self, account_info: str, amount: float) -> str:
+        """Proxies a withdrawal command to another bank node."""
         account_number_str, bank_code = account_info.split('/', 1)
         return self.proxy_command('AW', account_info, str(amount), bank_code)
 
     def send_gui_message(self, message_type: str, content: str):
+        """Sends a structured message to the GUI message queue."""
         try:
             message = {
                 'type': message_type,
@@ -630,6 +667,7 @@ class P2PNetwork:
             pass
     
     def get_gui_messages(self) -> List[Dict]:
+        """Returns all pending messages from the GUI queue."""
         messages = []
         while not self.gui_message_queue.empty():
             try:
@@ -639,6 +677,7 @@ class P2PNetwork:
         return messages
     
     def get_bank_statistics(self) -> Dict:
+        """Returns statistics about the bank, including active connections and status."""
         stats = self.db.get_bank_statistics(self.bank_code)
         stats['bank_code'] = self.bank_code
         stats['active_connections'] = len(self.active_connections)
@@ -646,9 +685,11 @@ class P2PNetwork:
         return stats
     
     def get_all_accounts(self) -> List[Dict]:
+        """Returns all accounts stored in the database."""
         return self.db.get_all_accounts()
     
     def get_known_banks(self) -> List[Dict]:
+        """Returns the list of known banks and their connection info."""
         conn = self.db.get_connection()
         try:
             cursor = conn.cursor()
@@ -663,6 +704,7 @@ class P2PNetwork:
             conn.close()
     
     def add_known_bank(self, bank_code: str, ip_address: str, port: int):
+        """Adds or updates a known bank in the database."""
         conn = self.db.get_connection()
         try:
             cursor = conn.cursor()
@@ -676,6 +718,7 @@ class P2PNetwork:
             conn.close()
     
     def get_active_connections(self) -> List[Dict]:
+        """Returns a list of all currently active client connections."""
         connections = []
         for conn_id, conn_info in self.active_connections.items():
             connections.append({
@@ -688,9 +731,11 @@ class P2PNetwork:
         return connections
 
     def send_monitor(self, msg_type, content):
+        """Sends a message to the monitor queue for GUI display or logging."""
         if self.monitor_queue:
             self.monitor_queue.put({
                 "type": msg_type,
                 "content": content,
                 "timestamp": datetime.now().strftime("%H:%M:%S")
             })
+
