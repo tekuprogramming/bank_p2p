@@ -727,3 +727,48 @@
 2026-01-28 21:46:46,929 - core.logger - INFO - Connection closed: 192.168.1.13:52544
 2026-01-28 21:46:51,842 - core.logger - INFO - Server stopped
 2026-01-28 21:46:51,843 - core.logger - INFO - Server stopped
+2026-01-28 22:22:36,650 - core.logger - INFO - Database initialized successfully
+2026-01-28 22:22:36,653 - core.logger - INFO - Bank node initialized: 192.168.1.13:65525
+2026-01-28 22:22:36,653 - core.logger - INFO - P2P Bank server started on 0.0.0.0:65525
+2026-01-28 22:23:23,629 - core.logger - INFO - New connection from 192.168.1.13:64165
+2026-01-28 22:23:26,056 - core.logger - INFO - Received from 192.168.1.13:64165: bc
+2026-01-28 22:23:26,056 - core.logger - INFO - Sent to 192.168.1.13:64165: BC 192.168.1.13
+2026-01-28 22:23:28,605 - core.logger - INFO - Received from 192.168.1.13:64165: ac
+2026-01-28 22:23:28,609 - core.logger - INFO - Account created: 10045/192.168.1.13 with balance $0.00
+2026-01-28 22:23:28,609 - core.logger - INFO - Sent to 192.168.1.13:64165: AC 10045/192.168.1.13
+2026-01-28 22:23:32,940 - core.logger - INFO - Received from 192.168.1.13:64165: aw
+2026-01-28 22:23:32,940 - core.logger - ERROR - Command AW error: P2PNetwork.withdraw() missing 2 required positional arguments: 'account_info' and 'amount_str'
+2026-01-28 22:23:32,940 - core.logger - INFO - Sent to 192.168.1.13:64165: ER Command incomplete
+2026-01-28 22:23:37,943 - core.logger - WARNING - Connection timeout with 192.168.1.13:64165
+2026-01-28 22:23:37,944 - core.logger - INFO - Connection closed: 192.168.1.13:64165
+2026-01-28 22:35:02,325 - core.logger - INFO - Database initialized successfully
+2026-01-28 22:35:02,330 - core.logger - INFO - Bank node initialized: 192.168.1.13:65525
+2026-01-28 22:35:02,331 - core.logger - INFO - P2P Bank server started on 0.0.0.0:65525
+2026-01-28 22:35:12,635 - core.logger - INFO - New connection from 192.168.1.13:61321
+2026-01-28 22:35:17,653 - core.logger - INFO - Received from 192.168.1.13:61321: bc
+2026-01-28 22:35:17,654 - core.logger - INFO - Sent to 192.168.1.13:61321: BC 192.168.1.13
+2026-01-28 22:35:18,984 - core.logger - INFO - Received from 192.168.1.13:61321: ac
+2026-01-28 22:35:18,988 - core.logger - INFO - Account created: 10046/192.168.1.13 with balance $0.00
+2026-01-28 22:35:18,988 - core.logger - INFO - Sent to 192.168.1.13:61321: AC 10046/192.168.1.13
+2026-01-28 22:35:20,451 - core.logger - INFO - Received from 192.168.1.13:61321: bc
+2026-01-28 22:35:20,451 - core.logger - INFO - Sent to 192.168.1.13:61321: BC 192.168.1.13
+2026-01-28 22:35:20,964 - core.logger - INFO - Received from 192.168.1.13:61321: bc
+2026-01-28 22:35:20,965 - core.logger - INFO - Sent to 192.168.1.13:61321: BC 192.168.1.13
+2026-01-28 22:35:21,398 - core.logger - INFO - Received from 192.168.1.13:61321: bc
+2026-01-28 22:35:21,399 - core.logger - INFO - Sent to 192.168.1.13:61321: BC 192.168.1.13
+2026-01-28 22:35:21,820 - core.logger - INFO - Received from 192.168.1.13:61321: bc
+2026-01-28 22:35:21,820 - core.logger - INFO - Sent to 192.168.1.13:61321: BC 192.168.1.13
+2026-01-28 22:35:22,767 - core.logger - INFO - Received from 192.168.1.13:61321: bc
+2026-01-28 22:35:22,768 - core.logger - INFO - Sent to 192.168.1.13:61321: BC 192.168.1.13
+2026-01-28 22:35:23,511 - core.logger - INFO - Received from 192.168.1.13:61321: bc
+2026-01-28 22:35:23,512 - core.logger - INFO - Sent to 192.168.1.13:61321: BC 192.168.1.13
+2026-01-28 22:35:24,481 - core.logger - INFO - Received from 192.168.1.13:61321: m
+2026-01-28 22:35:24,481 - core.logger - INFO - Sent to 192.168.1.13:61321: ER Unknown command
+2026-01-28 22:35:26,162 - core.logger - INFO - Received from 192.168.1.13:61321: a
+2026-01-28 22:35:26,162 - core.logger - INFO - Sent to 192.168.1.13:61321: ER Unknown command
+2026-01-28 22:35:26,523 - core.logger - INFO - Received from 192.168.1.13:61321: d
+2026-01-28 22:35:26,524 - core.logger - INFO - Sent to 192.168.1.13:61321: ER Unknown command
+2026-01-28 22:35:26,904 - core.logger - INFO - Received from 192.168.1.13:61321: d
+2026-01-28 22:35:26,904 - core.logger - INFO - Sent to 192.168.1.13:61321: ER Unknown command
+2026-01-28 22:35:31,913 - core.logger - WARNING - Connection timeout with 192.168.1.13:61321
+2026-01-28 22:35:31,914 - core.logger - INFO - Connection closed: 192.168.1.13:61321

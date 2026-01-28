@@ -13,7 +13,7 @@ from core.logger import setup_core_logging  #_core
 logger = setup_core_logging()   #_core
 
 HOST = "0.0.0.0"
-PORT = 5000
+PORT = 65525
 
 class BankMonitorGUI(tk.Tk):
 
@@ -87,10 +87,10 @@ class BankMonitorGUI(tk.Tk):
         self.after(100, self.process_messages)
 
     def add_log(self, message):
-        self.log_text.configure(state="normal")     #odemkne se
+        self.log_text.configure(state="normal")
         self.log_text.insert("end", f"{message}\n")
-        self.log_text.configure(state="disabled")   #zamkne se
-        self.log_text.see("end")    #posune pohled na posledni zpravu
+        self.log_text.configure(state="disabled")
+        self.log_text.see("end")
 
     def update_state(self):
         if self.is_running:
