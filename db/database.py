@@ -1,15 +1,35 @@
 import sqlite3
 from core.logger import setup_core_logging
-from typing import List, Dict, Any  #nový
+from typing import List, Dict, Any
 
-logger = setup_core_logging()   #nový
+logger = setup_core_logging()
 
 class DataBase:
+    """
+    Handles all database operations for the bank system, including account management,
+    transactions, known banks, and active connections.
+    """
+
     def __init__(self, db_path: str = "bank.db"):
+        """
+        Initializes the database with the given path and ensures required tables exist.
+
+        Args:
+            db_path: Path to the SQLite database file.
+        """
         self.db_path = db_path
         self.init_database()
 
     def get_connection(self) -> sqlite3.Connection:
+        """
+        Creates and returns a new SQLite database connection.
+
+        Returns:
+            An SQLite Connection object with row factory set to sqlite3.Row.
+        
+        Raises:
+            sqlite3.Error if the connection cannot be established.
+        """
         try:
             conn = sqlite3.connect(self.db_path)
             conn.row_factory = sqlite3.Row
@@ -19,10 +39,13 @@ class DataBase:
             raise
 
     def init_database(self):
+        """
+        Creates necessary tables if they do not already exist.
+        Tables: accounts, transactions, known_banks, active_connections.
+        """
         conn = self.get_connection()
         try:
             cursor = conn.cursor()
-            
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS accounts (
                     account_number INTEGER PRIMARY KEY,
@@ -34,7 +57,6 @@ class DataBase:
                     UNIQUE(account_number, bank_code)
                 )
             """)
-            
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS transactions (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -47,7 +69,6 @@ class DataBase:
                     FOREIGN KEY (account_number) REFERENCES accounts(account_number)
                 )
             """)
-            
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS known_banks (
                     bank_code TEXT PRIMARY KEY,
@@ -58,7 +79,6 @@ class DataBase:
                     UNIQUE(ip_address, port)
                 )
             """)
-            
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS active_connections (
                     connection_id TEXT PRIMARY KEY,
@@ -69,10 +89,8 @@ class DataBase:
                     status TEXT DEFAULT 'active'
                 )
             """)
-            
             conn.commit()
             logger.info("Database initialized successfully")
-            
         except sqlite3.Error as e:
             logger.error(f"Database initialization error: {e}")
             raise
@@ -80,6 +98,20 @@ class DataBase:
             conn.close()
 
     def execute_query(self, query: str, params: tuple = None, fetch: bool = False) -> Any:
+        """
+        Executes a SQL query with optional parameters and optional fetch.
+
+        Args:
+            query: The SQL query to execute.
+            params: Optional tuple of parameters for parameterized query.
+            fetch: If True, returns all fetched rows; if False, returns last inserted row ID.
+
+        Returns:
+            The query result (fetched rows or last row ID).
+        
+        Raises:
+            sqlite3.Error if the query fails.
+        """
         conn = self.get_connection()
         try:
             cursor = conn.cursor()
@@ -96,8 +128,14 @@ class DataBase:
             raise
         finally:
             conn.close()
-    
+
     def get_all_accounts(self) -> List[Dict]:
+        """
+        Retrieves all accounts from the database.
+
+        Returns:
+            A list of dictionaries, each representing an account.
+        """
         conn = self.get_connection()
         try:
             cursor = conn.cursor()
@@ -111,8 +149,19 @@ class DataBase:
             return [dict(row) for row in rows]
         finally:
             conn.close()
-    
+
     def get_bank_statistics(self, bank_code: str) -> Dict:
+        """
+        Retrieves aggregated statistics for a specific bank.
+
+        Args:
+            bank_code: The bank code to query.
+
+        Returns:
+            A dictionary containing total accounts, active accounts, total balance,
+            average balance, max/min balance, total transactions, known banks,
+            and active banks.
+        """
         conn = self.get_connection()
         try:
             cursor = conn.cursor()
@@ -127,7 +176,6 @@ class DataBase:
                 FROM accounts
                 WHERE bank_code = ?
             """, (bank_code,))
-            
             stats = dict(cursor.fetchone())
             
             cursor.execute("""
@@ -135,7 +183,6 @@ class DataBase:
                 FROM transactions
                 WHERE bank_code = ?
             """, (bank_code,))
-            
             stats.update(dict(cursor.fetchone()))
             
             cursor.execute("""
@@ -143,11 +190,11 @@ class DataBase:
                        SUM(CASE WHEN is_active = 1 THEN 1 ELSE 0 END) as active_banks
                 FROM known_banks
             """)
-            
             stats.update(dict(cursor.fetchone()))
             
             return stats
-            
         finally:
             conn.close()
+
+
 
