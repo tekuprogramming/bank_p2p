@@ -14,7 +14,7 @@ logger = setup_core_logging()
 
 class P2PNetwork:
 
-    def __init__(self, host: str = "0.0.0.0", port: int = 65525, timeout: int = 50):
+    def __init__(self, host: str = "0.0.0.0", port: int = 65525, timeout: int = 5):
         self.host = host
         self.port = port
         self.timeout = timeout
@@ -125,7 +125,7 @@ class P2PNetwork:
             while self.is_running:
                 data = client_socket.recv(1024).decode('utf-8').strip()
                 if not data:
-                    break
+                    continue
                 
                 logger.info(f"Received from {connection_id}: {data}")
                 self.send_gui_message("COMMAND", f"{connection_id}: {data}")
@@ -173,9 +173,9 @@ class P2PNetwork:
             return self.protocol.format_response('', error=str(e))
         except Exception as e:
             logger.error(f"Command {command} error: {e}")
-            return self.protocol.format_response('', error="Internal server error")
+            return self.protocol.format_response('', error="Command incomplete")
 
-    # BC
+    # BC - funguje
     def get_bank_code(self, client_ip: str = None) -> str:
         """
         Gets bank code
@@ -183,7 +183,7 @@ class P2PNetwork:
         """
         return self.bank_code
 
-    # AC
+    # AC - funguje
     def create_account(self, initial_balance: str = "0.0", client_ip: str = None) -> str:
         """
         Creates an account with given initial balance
@@ -236,7 +236,7 @@ class P2PNetwork:
         finally:
             conn.close()
 
-    # AD
+    # AD - možná
     def deposit(self, account_info: str, amount_str: str, client_ip: str = None) -> None:
         """
         Deposits an amount into the account
