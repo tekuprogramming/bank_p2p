@@ -1,10 +1,13 @@
+from db.database import DataBase
+from network.p2p import P2PNetwork
+
 if __name__ == "__main__":
     print("Testing P2P Bank Core...")
     
-    db = Database("test_bank.db")
+    db = DataBase("test_bank.db")
     print("Database initialized")
     
-    bank = P2PBankNode("127.0.0.1", 65530, 5)
+    bank = P2PNetwork("127.0.0.1", 65530, 5)
     print(f"Bank node created: {bank.bank_code}")
     
     print(f"Bank code: {bank.get_bank_code()}")

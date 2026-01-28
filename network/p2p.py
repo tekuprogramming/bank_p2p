@@ -109,7 +109,7 @@ class P2PNetwork:
     def handle_client(self, client_socket: socket.socket, address: Tuple[str, int]):
         client_ip, client_port = address
         connection_id = f"{client_ip}:{client_port}"
-        
+
         self.active_connections[connection_id] = {
             'socket': client_socket,
             'ip': client_ip,
@@ -117,40 +117,49 @@ class P2PNetwork:
             'connected_at': datetime.now().isoformat(),
             'status': 'active'
         }
-        
+
         self.send_gui_message("CONNECTION", f"New connection: {connection_id}")
         logger.info(f"New connection from {connection_id}")
-        
+
         try:
             while self.is_running:
-                data = client_socket.recv(1024).decode('utf-8').strip()
-                if not data:
+
+                raw = client_socket.recv(1024)
+
+                if not raw:
+                    break
+
+                data = raw.decode("utf-8").strip()
+
+                if data == "":
                     continue
-                
+
                 logger.info(f"Received from {connection_id}: {data}")
                 self.send_gui_message("COMMAND", f"{connection_id}: {data}")
-                
+
                 response = self.process_command(data, client_ip)
-            
-                client_socket.sendall(response.encode('utf-8'))
-                
+
+                client_socket.sendall(response.encode("utf-8"))
+
                 logger.info(f"Sent to {connection_id}: {response.strip()}")
                 self.send_gui_message("RESPONSE", f"{connection_id}: {response.strip()}")
-                
-                self.active_connections[connection_id]['status'] = 'active'
-                
+
+                self.active_connections[connection_id]["status"] = "active"
+
         except socket.timeout:
             logger.warning(f"Connection timeout with {connection_id}")
             self.send_gui_message("WARNING", f"Timeout: {connection_id}")
+
         except Exception as e:
             logger.error(f"Error handling client {connection_id}: {e}")
             self.send_gui_message("ERROR", f"Client error {connection_id}: {e}")
+
         finally:
-            client_socket.close()       #Pokud uživatel nic nepošle, tak se odpojí
-            
+            client_socket.close()
+
             if connection_id in self.active_connections:
                 del self.active_connections[connection_id]
-            
+
             logger.info(f"Connection closed: {connection_id}")
             self.send_gui_message("CONNECTION", f"Closed: {connection_id}")
 
@@ -634,3 +643,4 @@ class P2PNetwork:
                 'status': conn_info['status']
             })
         return connections
+
