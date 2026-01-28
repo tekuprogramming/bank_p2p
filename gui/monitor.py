@@ -2,18 +2,25 @@ import tkinter as tk
 from tkinter import ttk, scrolledtext, messagebox
 import threading
 import queue
-import time
-from datetime import datetime
 
+from core.utils import current_timestamp, validate_ip_address, validate_port
 from network.p2p import P2PNetwork
-from core.protocol import BankProtocol
-from db.database import DataBase
 from core.logger import setup_core_logging  #_core
 
 logger = setup_core_logging()   #_core
 
-HOST = "0.0.0.0"
-PORT = 65525
+CONFIG_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config.ini")
+config = configparser.ConfigParser()
+config.read(CONFIG_PATH)
+
+# --- check required keys (reused pattern from LibraryApp) ---
+required_keys = ["host", "port"]
+missing = [k for k in required_keys if config.get("p2p", k, fallback=None) is None]
+if missing:
+    logger.warning(f"Missing configuration keys in [p2p]: {', '.join(missing)}")
+
+HOST = config.get("p2p", "host", fallback="0.0.0.0")
+PORT = config.getint("p2p", "port", fallback=5000)
 
 class BankMonitorGUI(tk.Tk):
 
@@ -44,12 +51,17 @@ class BankMonitorGUI(tk.Tk):
         self.load_config()
         self.create_widgets()
 
-        self.after(100, self.process_messages)
-        self.after(self.update_interval, self.update_state)
+        self.schedule_refresh(self.process_messages, 100)
+        self.schedule_refresh(self.update_state, self.update_interval)
 
     def load_config(self):
         self.bank_ip = HOST
         self.bank_port = PORT
+
+        if not validate_ip_address(self.bank_ip):
+            logger.warning(f"Invalid IP address in config: {self.bank_ip}")
+        if not validate_port(self.bank_port):
+            logger.warning(f"Invalid port in config: {self.bank_port}")
 
     def create_widgets(self):
         top_frame = ttk.LabelFrame(self, text="Node Status")
@@ -92,6 +104,8 @@ class BankMonitorGUI(tk.Tk):
         self.log_text.configure(state="disabled")
         self.log_text.see("end")
 
+        logger.info(message)
+
     def update_state(self):
         if self.is_running:
             self.status_label.config(text="RUNNING", foreground="green")
@@ -112,7 +126,7 @@ class BankMonitorGUI(tk.Tk):
         message = {
             'type': "INFO",
             'content': "Node started",
-            'timestamp': datetime.now().isoformat()
+            'timestamp': current_timestamp()
         }
         self.message_queue.put(message)
 
@@ -125,6 +139,11 @@ class BankMonitorGUI(tk.Tk):
         message = {
             'type': "INFO",
             'content': "Node stopped",
-            'timestamp': datetime.now().isoformat()
+            'timestamp': current_timestamp()
         }
         self.message_queue.put(message)
+
+    def schedule_refresh(self, func, interval_ms):
+        func()
+        self.after(interval_ms, lambda: self.schedule_refresh(func, interval_ms))
+
