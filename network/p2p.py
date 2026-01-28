@@ -2,8 +2,8 @@ import socket
 import sqlite3
 import threading
 import queue
-from datetime import datetime   #nový
-from typing import Tuple, List, Dict  #nový
+from datetime import datetime
+from typing import Tuple, List, Dict
 
 from db.database import DataBase
 from core.protocol import BankProtocol
@@ -20,7 +20,7 @@ class P2PNetwork:
         self.timeout = timeout
         self.is_running = False
 
-        self.db = DataBase()    # b -> B
+        self.db = DataBase()
         self.protocol = BankProtocol()
         self.server_socket = None
         self.active_connections = {}
@@ -209,14 +209,20 @@ class P2PNetwork:
             new_account = (max_acc or 10000) + 1
             
             if new_account > 99999:
-                raise ValueError("Bank account limit reached")
+                self.send_gui_message("ERROR", "Bank account limit reached")
+                logger.info("ER Bank account limit reached")
+                raise ValueError("ER Bank account limit reached")
             
             try:
                 balance = float(initial_balance) if initial_balance else 0.0
                 if balance < 0:
-                    raise ValueError("Initial balance cannot be negative")
+                    self.send_gui_message("ERROR", "Initial balance cannot be negative")
+                    logger.info("ER Initial balance cannot be negative")
+                    raise ValueError("ER Initial balance cannot be negative")
             except ValueError:
-                raise ValueError("Invalid initial balance")
+                self.send_gui_message("ERROR", "Invalid initial balance")
+                logger.info("ER Invalid initial balance")
+                raise ValueError("ER Invalid initial balance")
             
             cursor.execute("""
                 INSERT INTO accounts (account_number, bank_code, balance, is_active)
@@ -233,6 +239,7 @@ class P2PNetwork:
             conn.commit()
             
             account_info = f"{new_account}/{self.bank_code}"
+
             logger.info(f"Account created: {account_info} with balance ${balance:,.2f}")
             self.send_gui_message("ACCOUNT", f"Created: {account_info}")
             
@@ -240,6 +247,7 @@ class P2PNetwork:
             
         except sqlite3.Error as e:
             conn.rollback()
+
             logger.error(f"Create account error: {e}")
             raise ValueError("Cannot create account")
         finally:
@@ -255,7 +263,9 @@ class P2PNetwork:
         :return: If the user enters a different bank, it calls the method proxy_command
         """
         if '/' not in account_info:
-            raise ValueError("Invalid account format. Use: account_number/bank_code")
+            self.send_gui_message("ERROR", "Invalid account format. Use: account_number/bank_code")
+            logger.error("ER Invalid account format. Use: account_number/bank_code")
+            raise ValueError("ER Invalid account format. Use: account_number/bank_code")
         
         account_number_str, bank_code = account_info.split('/', 1)
         
@@ -267,11 +277,17 @@ class P2PNetwork:
             amount = float(amount_str)
             
             if amount <= 0:
-                raise ValueError("Amount must be positive")
+                self.send_gui_message("ERROR", "Amount must be positive")
+                logger.error("ER Amount must be positive")
+                raise ValueError("ER Amount must be positive")
             if amount > 1000000:
-                raise ValueError("Maximum deposit amount is $1,000,000")
+                self.send_gui_message("ERROR", "Maximum deposit amount is $1,000,000")
+                logger.error("ER Maximum deposit amount is $1,000,000")
+                raise ValueError("ER Maximum deposit amount is $1,000,000")
         except ValueError:
-            raise ValueError("Invalid account number or amount format")
+            self.send_gui_message("ER", "Invalid account number or amount format")
+            logger.error("ER Invalid account number or amount format")
+            raise ValueError("ER Invalid account number or amount format")
         
         conn = self.db.get_connection()
         try:
@@ -284,9 +300,13 @@ class P2PNetwork:
             
             account = cursor.fetchone()
             if not account:
-                raise ValueError("Account not found")
+                self.send_gui_message("ERROR", "Account not found")
+                logger.error("ER Account not found")
+                raise ValueError("ER Account not found")
             if not account['is_active']:
-                raise ValueError("Account is not active")
+                self.send_gui_message("ERROR", "Account is not active")
+                logger.error("ER Account is not active")
+                raise ValueError("ER Account is not active")
             
             new_balance = account['balance'] + amount
             cursor.execute("""
@@ -307,6 +327,7 @@ class P2PNetwork:
             
         except sqlite3.Error as e:
             conn.rollback()
+            self.send_gui_message("ERROR", "Deposit error")
             logger.error(f"Deposit error: {e}")
             raise ValueError("Transaction failed")
         finally:
@@ -322,7 +343,9 @@ class P2PNetwork:
         :return: If the user enters a different bank, it calls the method proxy_command
         """
         if '/' not in account_info:
-            raise ValueError("Invalid account format. Use: account_number/bank_code")
+            self.send_gui_message("ERROR", "Invalid account format. Use: account_number/bank_code")
+            logger.error("ER Invalid account format. Use: account_number/bank_code")
+            raise ValueError("ER Invalid account format. Use: account_number/bank_code")
         
         account_number_str, bank_code = account_info.split('/', 1)
         
@@ -390,7 +413,9 @@ class P2PNetwork:
         :return: returns the balance of the account
         """
         if '/' not in account_info:
-            raise ValueError("Invalid account format. Use: account_number/bank_code")
+            self.send_gui_message("ERROR", "Invalid account format. Use: account_number/bank_code")
+            logger.error("ER Invalid account format. Use: account_number/bank_code")
+            raise ValueError("ER Invalid account format. Use: account_number/bank_code")
         
         account_number_str, bank_code = account_info.split('/', 1)
         
@@ -400,7 +425,9 @@ class P2PNetwork:
         try:
             account_number = int(account_number_str)
         except ValueError:
-            raise ValueError("Invalid account number")
+            self.send_gui_message("ERROR", "Invalid account number")
+            logger.error("ER Invalid account number")
+            raise ValueError("ER Invalid account number")
         
         conn = self.db.get_connection()
         try:
@@ -413,13 +440,16 @@ class P2PNetwork:
             
             account = cursor.fetchone()
             if not account:
-                raise ValueError("Account not found or inactive")
+                self.send_gui_message("ERROR", "Account not found or inactive")
+                logger.error("ER Account not found or inactive")
+                raise ValueError("ER Account not found or inactive")
             
             return str(account['balance'])
             
         except sqlite3.Error as e:
-            logger.error(f"Get balance error: {e}")
-            raise ValueError("Cannot retrieve balance")
+            self.send_gui_message("ERROR", "Get balance error")
+            logger.error(f"ER Get balance error: {e}")
+            raise ValueError("ER Database query failed")
         finally:
             conn.close()
 
@@ -440,8 +470,9 @@ class P2PNetwork:
             return amount
 
         except sqlite3.Error as e:
-            logger.error(f"Bank amount query error: {e}")
-            raise ValueError("Database query failed")
+            self.send_gui_message("ERROR", "Bank amount query error")
+            logger.error(f"ER Bank amount query error: {e}")
+            raise ValueError("ER Database query failed")
 
         finally:
             con.close()
@@ -460,8 +491,9 @@ class P2PNetwork:
             return count
 
         except sqlite3.Error as e:
-            logger.error(f"Bank number query error: {e}")
-            raise ValueError("Database query failed")
+            self.send_gui_message("ERROR", "Bank number query error")
+            logger.error(f"ER Bank number query error: {e}")
+            raise ValueError("ER Database query failed")
 
         finally:
             con.close()
@@ -474,32 +506,39 @@ class P2PNetwork:
         :return: result of the operation
         """
         if "/" not in account_info:
-            raise ValueError("Bank account info must contain '/' character")
+            self.send_gui_message("ERROR", "Bank account info must contain '/' character")
+            logger.error("ER Bank account info must contain '/' character")
+            raise ValueError("ER Bank account info must contain '/' character")
 
         account_number_str, bank_code = account_info.split("/", 1)
 
         if bank_code != self.get_local_ip():
             #return self.proxy_command('AR', account_info, None, bank_code)
-            raise ValueError("Invalid bank code")
+            self.send_gui_message("ERROR", "Invalid bank code")
+            logger.debug("ER Invalid bank code")
+            raise ValueError("ER Invalid bank code")
 
         con = self.db.get_connection()
 
         try:
             cursor = con.cursor()
-
             account_number = int(account_number_str)
 
             cursor.execute(""" SELECT balance FROM accounts WHERE account_number = ? AND bank_code = ? """, (account_number, bank_code))
             row = cursor.fetchone()
             if row is None:
-                raise ValueError("Account not found")
+                self.send_gui_message("ERROR", "Account not found")
+                logger.debug("ER Account not found")
+                raise ValueError("ER Account not found")
 
             balance = row[0]
             if balance is None:
                 balance = 0
 
             if balance > 0:
-                return "ER: Cannot delete bank account containing funds"
+                self.send_gui_message("ERROR", "ER Cannot delete bank account containing founds")
+                logger.debug("ER Cannot delete bank account containing founds")
+                raise Exception("ER Cannot delete bank account containing founds")
 
             cursor.execute("""
                 DELETE from accounts
@@ -507,11 +546,13 @@ class P2PNetwork:
                 """, (account_number, bank_code))
 
             con.commit()
+            self.send_gui_message("INFO", f"Account removed successfully")
 
         except sqlite3.Error as e:
             con.rollback()
-            logger.error(f"Account remove failed: {e}")
-            raise ValueError("Database query failed")
+            logger.error(f"ER Account remove failed: {e}")
+            self.send_gui_message("ERROR", "ER Account remove failed")
+            raise ValueError("ER Database query failed")
 
         finally:
             con.close()

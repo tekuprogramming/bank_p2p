@@ -650,3 +650,80 @@
 2026-01-28 20:59:50,682 - core.logger - INFO - Account created: 10035/192.168.1.13 with balance $0.00
 2026-01-28 20:59:50,685 - core.logger - INFO - Deposited $20,000.00 to account 10035/192.168.1.13
 2026-01-28 20:59:50,689 - core.logger - INFO - Withdrew $10,000.00 from account 10035/192.168.1.13
+2026-01-28 21:40:41,588 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:40:41,594 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:40:41,595 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:40:41,597 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:40:41,600 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:40:41,601 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:40:41,605 - core.logger - INFO - Account created: 10036/192.168.1.13 with balance $0.00
+2026-01-28 21:40:41,607 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:40:41,610 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:40:41,610 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:40:41,612 - core.logger - INFO - Account created: 10037/192.168.1.13 with balance $0.00
+2026-01-28 21:40:41,615 - core.logger - INFO - Deposited $20,000.00 to account 10037/192.168.1.13
+2026-01-28 21:40:41,618 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:40:41,620 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:40:41,621 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:40:41,624 - core.logger - INFO - Account created: 10038/192.168.1.13 with balance $0.00
+2026-01-28 21:40:41,626 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:40:41,628 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:40:41,629 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:40:41,630 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:40:41,633 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:40:41,634 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:40:41,636 - core.logger - INFO - Account created: 10039/192.168.1.13 with balance $0.00
+2026-01-28 21:40:41,646 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:40:41,649 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:40:41,650 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:40:41,652 - core.logger - INFO - Account created: 10039/192.168.1.13 with balance $0.00
+2026-01-28 21:40:41,655 - core.logger - INFO - Deposited $20,000.00 to account 10039/192.168.1.13
+2026-01-28 21:40:41,657 - core.logger - INFO - Withdrew $10,000.00 from account 10039/192.168.1.13
+2026-01-28 21:41:02,261 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:41:02,268 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:41:02,268 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:41:02,270 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:41:02,273 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:41:02,274 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:41:02,287 - core.logger - INFO - Account created: 10040/192.168.1.13 with balance $0.00
+2026-01-28 21:41:02,289 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:41:02,292 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:41:02,293 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:41:02,295 - core.logger - INFO - Account created: 10041/192.168.1.13 with balance $0.00
+2026-01-28 21:41:02,299 - core.logger - INFO - Deposited $20,000.00 to account 10041/192.168.1.13
+2026-01-28 21:41:02,301 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:41:02,304 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:41:02,305 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:41:02,308 - core.logger - INFO - Account created: 10042/192.168.1.13 with balance $0.00
+2026-01-28 21:41:02,310 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:41:02,313 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:41:02,314 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:41:02,315 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:41:02,319 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:41:02,320 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:41:02,324 - core.logger - INFO - Account created: 10043/192.168.1.13 with balance $0.00
+2026-01-28 21:41:02,335 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:41:02,337 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:41:02,338 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:41:02,341 - core.logger - INFO - Account created: 10043/192.168.1.13 with balance $0.00
+2026-01-28 21:41:02,345 - core.logger - INFO - Deposited $20,000.00 to account 10043/192.168.1.13
+2026-01-28 21:41:02,349 - core.logger - INFO - Withdrew $10,000.00 from account 10043/192.168.1.13
+2026-01-28 21:46:15,760 - core.logger - INFO - Database initialized successfully
+2026-01-28 21:46:15,765 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 21:46:15,766 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 21:46:24,164 - core.logger - INFO - New connection from 192.168.1.13:52543
+2026-01-28 21:46:26,730 - core.logger - INFO - Received from 192.168.1.13:52543: bc
+2026-01-28 21:46:26,730 - core.logger - INFO - Sent to 192.168.1.13:52543: BC 192.168.1.13
+2026-01-28 21:46:31,733 - core.logger - WARNING - Connection timeout with 192.168.1.13:52543
+2026-01-28 21:46:31,733 - core.logger - INFO - Connection closed: 192.168.1.13:52543
+2026-01-28 21:46:36,448 - core.logger - INFO - New connection from 192.168.1.13:52544
+2026-01-28 21:46:39,470 - core.logger - INFO - Received from 192.168.1.13:52544: ac
+2026-01-28 21:46:39,485 - core.logger - INFO - Account created: 10044/192.168.1.13 with balance $0.00
+2026-01-28 21:46:39,485 - core.logger - INFO - Sent to 192.168.1.13:52544: AC 10044/192.168.1.13
+2026-01-28 21:46:41,923 - core.logger - INFO - Received from 192.168.1.13:52544: aw
+2026-01-28 21:46:41,924 - core.logger - ERROR - Command AW error: P2PNetwork.withdraw() missing 2 required positional arguments: 'account_info' and 'amount_str'
+2026-01-28 21:46:41,924 - core.logger - INFO - Sent to 192.168.1.13:52544: ER Command incomplete
+2026-01-28 21:46:46,928 - core.logger - WARNING - Connection timeout with 192.168.1.13:52544
+2026-01-28 21:46:46,929 - core.logger - INFO - Connection closed: 192.168.1.13:52544
+2026-01-28 21:46:51,842 - core.logger - INFO - Server stopped
+2026-01-28 21:46:51,843 - core.logger - INFO - Server stopped

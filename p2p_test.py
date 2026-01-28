@@ -42,7 +42,9 @@ class TestP2PNetwork(unittest.TestCase):
         self.assertEqual(float(self.p2p.get_balance(account_info)), float(20000))
         with self.assertRaises(ValueError):
             self.p2p.get_balance(f"{account_number_str}.{bank_code}")
-            self.p2p.get_balance(f"{0}.{bank_code}")
+            self.p2p.get_balance(f"{0}/{bank_code}")
+            self.p2p.get_balance(f"{account_number_str}/{bank_code}", "-5")
+            self.p2p.get_balance(f"{account_number_str}/{bank_code}", "10000000")
 
     def test_withdraw(self):
         account_info = self.p2p.create_account()
@@ -61,6 +63,8 @@ class TestP2PNetwork(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.p2p.get_balance(f"{account_number_str}.{bank_code}")
             self.p2p.get_balance(f"{0}.{bank_code}")
+            self.p2p.get_balance(f"{account_number_str}/{bank_code}", "-5")
+            self.p2p.get_balance(f"{account_number_str}/{bank_code}", "10000000")
 
     def test_get_balance(self):
         account_info = self.p2p.create_account()
