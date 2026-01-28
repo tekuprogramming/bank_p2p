@@ -79,16 +79,18 @@ class BankMonitorGUI(tk.Tk):
     def process_messages(self):
         while not self.message_queue.empty():
             message = self.message_queue.get()
-            self.add_log(message)
+            message_type = message.get("type")
+            content = message.get("content")
+            timestamp = message.get("timestamp")
+            self.add_log(f"{timestamp}: [{message_type}] {content}")
 
         self.after(100, self.process_messages)
 
     def add_log(self, message):
-        timestamp = datetime.now().strftime("%H:%M:%S")
-        self.log_text.configure(state="normal")
-        self.log_text.insert("end", f"[{timestamp}] {message}\n")
-        self.log_text.configure(state="disabled")
-        self.log_text.see("end")
+        self.log_text.configure(state="normal")     #odemkne se
+        self.log_text.insert("end", f"{message}\n")
+        self.log_text.configure(state="disabled")   #zamkne se
+        self.log_text.see("end")    #posune pohled na posledni zpravu
 
     def update_state(self):
         if self.is_running:
@@ -107,7 +109,12 @@ class BankMonitorGUI(tk.Tk):
         self.server_thread.start()
 
         self.is_running = True
-        self.message_queue.put("Node started")
+        message = {
+            'type': "INFO",
+            'content': "Node started",
+            'timestamp': datetime.now().isoformat()
+        }
+        self.message_queue.put(message)
 
     def stop_node(self):
         if not self.is_running:
@@ -115,8 +122,9 @@ class BankMonitorGUI(tk.Tk):
 
         self.bank_node.stop_server()
         self.is_running = False
-        self.message_queue.put("Node stopped")
-
-    def stop_server(self):
-        self.is_running = False
-        self.bank_node.stop_server()
+        message = {
+            'type': "INFO",
+            'content': "Node stopped",
+            'timestamp': datetime.now().isoformat()
+        }
+        self.message_queue.put(message)

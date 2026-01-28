@@ -184,3 +184,67 @@
 2026-01-28 18:20:47,597 - core.logger - INFO - Sent to 192.168.1.13:52002: ER Command incomplete
 2026-01-28 18:20:52,600 - core.logger - WARNING - Connection timeout with 192.168.1.13:52002
 2026-01-28 18:20:52,600 - core.logger - INFO - Connection closed: 192.168.1.13:52002
+2026-01-28 18:25:26,060 - core.logger - INFO - Database initialized successfully
+2026-01-28 18:25:26,065 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 18:25:26,066 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 18:31:49,293 - core.logger - INFO - Database initialized successfully
+2026-01-28 18:31:49,298 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 18:31:49,299 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 18:34:55,079 - core.logger - INFO - Database initialized successfully
+2026-01-28 18:34:55,082 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 18:34:55,083 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 18:35:34,100 - core.logger - INFO - Database initialized successfully
+2026-01-28 18:35:34,103 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 18:35:34,104 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 18:48:48,766 - core.logger - INFO - Database initialized successfully
+2026-01-28 18:48:48,772 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 18:48:48,773 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 18:49:41,520 - core.logger - INFO - Database initialized successfully
+2026-01-28 18:49:41,525 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 18:49:41,526 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 18:50:49,915 - core.logger - INFO - Database initialized successfully
+2026-01-28 18:50:49,919 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 18:50:49,920 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 18:55:35,202 - core.logger - INFO - Database initialized successfully
+2026-01-28 18:55:35,208 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 18:55:35,209 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 18:58:40,224 - core.logger - INFO - Database initialized successfully
+2026-01-28 18:58:40,229 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 18:58:40,230 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 18:59:00,316 - core.logger - INFO - New connection from 192.168.1.13:54064
+2026-01-28 18:59:04,846 - core.logger - INFO - Received from 192.168.1.13:54064: vc
+2026-01-28 18:59:04,847 - core.logger - INFO - Sent to 192.168.1.13:54064: ER Unknown command
+2026-01-28 18:59:07,439 - core.logger - INFO - Received from 192.168.1.13:54064: bc
+2026-01-28 18:59:07,439 - core.logger - INFO - Sent to 192.168.1.13:54064: BC 192.168.1.13
+2026-01-28 18:59:10,513 - core.logger - INFO - Received from 192.168.1.13:54064: ac
+2026-01-28 18:59:10,527 - core.logger - INFO - Account created: 10004/192.168.1.13 with balance $0.00
+2026-01-28 18:59:10,527 - core.logger - INFO - Sent to 192.168.1.13:54064: AC 10004/192.168.1.13
+2026-01-28 18:59:14,479 - core.logger - INFO - Received from 192.168.1.13:54064: aw
+2026-01-28 18:59:14,479 - core.logger - ERROR - Command AW error: P2PNetwork.withdraw() missing 2 required positional arguments: 'account_info' and 'amount_str'
+2026-01-28 18:59:14,479 - core.logger - INFO - Sent to 192.168.1.13:54064: ER Command incomplete
+2026-01-28 18:59:16,336 - core.logger - INFO - Received from 192.168.1.13:54064: ad
+2026-01-28 18:59:16,336 - core.logger - ERROR - Command AD error: P2PNetwork.deposit() missing 2 required positional arguments: 'account_info' and 'amount_str'
+2026-01-28 18:59:16,336 - core.logger - INFO - Sent to 192.168.1.13:54064: ER Command incomplete
+2026-01-28 18:59:20,298 - core.logger - INFO - Received from 192.168.1.13:54064: bn
+2026-01-28 18:59:20,299 - core.logger - INFO - Sent to 192.168.1.13:54064: BN 4
+2026-01-28 18:59:23,841 - core.logger - INFO - Received from 192.168.1.13:54064: bA
+2026-01-28 18:59:23,842 - core.logger - INFO - Sent to 192.168.1.13:54064: BA 10000.0
+2026-01-28 18:59:28,851 - core.logger - WARNING - Connection timeout with 192.168.1.13:54064
+2026-01-28 18:59:28,852 - core.logger - INFO - Connection closed: 192.168.1.13:54064
+2026-01-28 18:59:33,192 - core.logger - INFO - Server stopped
+2026-01-28 18:59:33,192 - core.logger - INFO - Server stopped
+2026-01-28 19:03:04,750 - core.logger - INFO - Database initialized successfully
+2026-01-28 19:03:04,755 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 19:03:04,756 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 19:03:07,330 - core.logger - INFO - Server stopped
+2026-01-28 19:03:07,331 - core.logger - INFO - Server stopped
+2026-01-28 19:07:06,859 - core.logger - INFO - Database initialized successfully
+2026-01-28 19:07:06,863 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 19:07:06,863 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 19:07:09,030 - core.logger - INFO - Server stopped
+2026-01-28 19:07:09,031 - core.logger - INFO - Server stopped
+2026-01-28 19:07:13,897 - core.logger - INFO - Database initialized successfully
+2026-01-28 19:07:13,903 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 19:07:13,903 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 19:07:18,063 - core.logger - INFO - Server stopped
+2026-01-28 19:07:18,063 - core.logger - INFO - Server stopped
