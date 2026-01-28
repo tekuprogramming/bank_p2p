@@ -14,9 +14,10 @@ logger = setup_core_logging()
 
 class P2PNetwork:
 
-    def __init__(self, host: str = "0.0.0.0", port: int = 65525, timeout: int = 5, monitor_queue: queue.Queue = queue.Queue):
+    def __init__(self, host: str = "0.0.0.0", port: int = 65525, monitor_queue = None, timeout: int = 5):
         self.host = host
         self.port = port
+        self.monitor_queue = monitor_queue
         self.timeout = timeout
         self.is_running = False
 
@@ -64,7 +65,7 @@ class P2PNetwork:
             self.is_running = True
             
             logger.info(f"P2P Bank server started on {self.host}:{self.port}")
-            self.send_gui_message("INFO", f"Server started on {self.host}:{self.port}")
+            self.send_monitor("INFO", f"Server started on {self.host}:{self.port}")
             
             while self.is_running:
                 try:
@@ -118,7 +119,7 @@ class P2PNetwork:
             'status': 'active'
         }
 
-        self.send_gui_message("CONNECTION", f"New connection: {connection_id}")
+        self.send_monitor("CONNECTION", f"New connection: {connection_id}")
         logger.info(f"New connection from {connection_id}")
 
         try:
@@ -686,3 +687,10 @@ class P2PNetwork:
             })
         return connections
 
+    def send_monitor(self, msg_type, content):
+        if self.monitor_queue:
+            self.monitor_queue.put({
+                "type": msg_type,
+                "content": content,
+                "timestamp": datetime.now().strftime("%H:%M:%S")
+            })
