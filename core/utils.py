@@ -1,4 +1,9 @@
 import ipaddress
+from datetime import datetime
+
+
+def current_timestamp():
+    return datetime.now().strftime("%H:%M:%S")
 
 def validate_ip_address(ip: str) -> bool:
     try:
