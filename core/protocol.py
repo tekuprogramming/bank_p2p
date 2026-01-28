@@ -12,9 +12,7 @@ class BankProtocol:
         "AB": "get_balance",
         "AR": "remove_account",
         "BA": "bank_amount",
-        "BN": "bank_number_of_clients",
-        "ST": "get_statistics",
-        "LB": "list_accounts"
+        "BN": "bank_number_of_clients"
     }
 
     @staticmethod
@@ -37,4 +35,5 @@ class BankProtocol:
                 return f"{command} {result}\n"
         else:
             return f"{command}\n"
+
 
