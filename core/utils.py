@@ -33,9 +33,9 @@ def validate_port(port: int) -> bool:
         port: The port number to validate.
 
     Returns:
-        True if the port is between 1024 and 65535 (inclusive), False otherwise.
+        True if the port is between 65525 and 65535 (inclusive), False otherwise.
     """
-    return 1024 <= port <= 65535
+    return 65525 <= port <= 65535
 
 def format_currency(amount: float) -> str:
     """
