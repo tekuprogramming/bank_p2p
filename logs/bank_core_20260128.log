@@ -248,3 +248,405 @@
 2026-01-28 19:07:13,903 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
 2026-01-28 19:07:18,063 - core.logger - INFO - Server stopped
 2026-01-28 19:07:18,063 - core.logger - INFO - Server stopped
+2026-01-28 19:32:51,898 - core.logger - INFO - Database initialized successfully
+2026-01-28 19:32:51,901 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 19:32:51,902 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 19:32:53,323 - core.logger - INFO - Server stopped
+2026-01-28 19:32:53,323 - core.logger - INFO - Server stopped
+2026-01-28 19:46:55,202 - core.logger - INFO - Database initialized successfully
+2026-01-28 19:46:55,207 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 19:49:15,661 - core.logger - INFO - Database initialized successfully
+2026-01-28 19:49:15,666 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 19:49:15,668 - core.logger - INFO - Database initialized successfully
+2026-01-28 19:49:15,671 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 19:49:15,673 - core.logger - INFO - Database initialized successfully
+2026-01-28 19:49:15,676 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:00:13,080 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:00:13,087 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:00:13,088 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:00:13,089 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:00:13,092 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:00:13,093 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:00:13,096 - core.logger - INFO - Account created: 10005/192.168.1.13 with balance $0.00
+2026-01-28 20:00:13,112 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:00:13,115 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:00:13,115 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:00:13,117 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:00:13,119 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:00:13,120 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:00:13,121 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:00:13,124 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:00:13,125 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:00:13,127 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:00:13,130 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:00:13,130 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:00:13,132 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:00:13,135 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:00:13,136 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:07:16,145 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:07:16,157 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:07:16,158 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:07:16,160 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:07:16,163 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:07:16,164 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:07:16,167 - core.logger - INFO - Account created: 10006/192.168.1.13 with balance $0.00
+2026-01-28 20:07:16,173 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:07:16,176 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:07:16,176 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:07:16,178 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:07:16,182 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:07:16,183 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:07:16,184 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:07:16,186 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:07:16,188 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:07:16,189 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:07:16,192 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:07:16,193 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:07:16,194 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:07:16,196 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:07:16,197 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:09:22,523 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:09:22,529 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:09:22,530 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:09:22,532 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:09:22,536 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:09:22,536 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:09:22,551 - core.logger - INFO - Account created: 10007/192.168.1.13 with balance $0.00
+2026-01-28 20:09:22,553 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:09:22,556 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:09:22,557 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:09:22,558 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:09:22,561 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:09:22,562 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:09:22,564 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:09:22,567 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:09:22,568 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:09:22,569 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:09:22,573 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:09:22,574 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:09:22,575 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:09:22,578 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:09:22,579 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:21:57,386 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:21:57,392 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:21:57,392 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:21:57,394 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:21:57,397 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:21:57,398 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:21:57,412 - core.logger - INFO - Account created: 10008/192.168.1.13 with balance $0.00
+2026-01-28 20:21:57,414 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:21:57,417 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:21:57,418 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:21:57,419 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:21:57,422 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:21:57,423 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:21:57,423 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:21:57,426 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:21:57,427 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:21:57,428 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:21:57,430 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:21:57,431 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:21:57,434 - core.logger - INFO - Account created: 10009/192.168.1.13 with balance $0.00
+2026-01-28 20:21:57,443 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:21:57,446 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:21:57,447 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:22:53,887 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:22:53,894 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:22:53,894 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:22:53,896 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:22:53,899 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:22:53,900 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:22:53,913 - core.logger - INFO - Account created: 10009/192.168.1.13 with balance $0.00
+2026-01-28 20:22:53,916 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:22:53,919 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:22:53,920 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:22:53,921 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:22:53,924 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:22:53,924 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:22:53,926 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:22:53,929 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:22:53,929 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:22:53,930 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:22:53,933 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:22:53,934 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:22:53,937 - core.logger - INFO - Account created: 10010/192.168.1.13 with balance $0.00
+2026-01-28 20:22:53,949 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:22:53,952 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:22:53,953 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:26:14,509 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:26:14,517 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:26:14,518 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:26:14,520 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:26:14,523 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:26:14,524 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:26:14,528 - core.logger - INFO - Account created: 10010/192.168.1.13 with balance $0.00
+2026-01-28 20:26:14,530 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:26:14,533 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:26:14,534 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:26:14,535 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:26:14,539 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:26:14,539 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:26:14,540 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:26:14,543 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:26:14,544 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:26:14,545 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:26:14,548 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:26:14,549 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:26:14,553 - core.logger - INFO - Account created: 10011/192.168.1.13 with balance $0.00
+2026-01-28 20:26:14,564 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:26:14,567 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:26:14,568 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:06,416 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:06,423 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:06,423 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:06,425 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:06,428 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:06,429 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:06,432 - core.logger - INFO - Account created: 10011/192.168.1.13 with balance $0.00
+2026-01-28 20:43:06,434 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:06,437 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:06,438 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:06,439 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:06,442 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:06,443 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:06,447 - core.logger - INFO - Account created: 10012/192.168.1.13 with balance $0.00
+2026-01-28 20:43:06,454 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:06,457 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:06,458 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:06,459 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:06,462 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:06,463 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:06,467 - core.logger - INFO - Account created: 10013/192.168.1.13 with balance $0.00
+2026-01-28 20:43:06,480 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:06,483 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:06,485 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:30,370 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:30,376 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:30,377 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:30,379 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:30,382 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:30,383 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:30,397 - core.logger - INFO - Account created: 10013/192.168.1.13 with balance $0.00
+2026-01-28 20:43:30,400 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:30,403 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:30,404 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:30,404 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:30,407 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:30,408 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:30,412 - core.logger - INFO - Account created: 10014/192.168.1.13 with balance $0.00
+2026-01-28 20:43:30,417 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:30,420 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:30,420 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:30,421 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:30,424 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:30,425 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:30,428 - core.logger - INFO - Account created: 10015/192.168.1.13 with balance $0.00
+2026-01-28 20:43:30,439 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:30,442 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:30,443 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:59,242 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:59,250 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:59,251 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:59,254 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:59,257 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:59,258 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:59,272 - core.logger - INFO - Account created: 10015/192.168.1.13 with balance $0.00
+2026-01-28 20:43:59,275 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:59,278 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:59,279 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:59,280 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:59,283 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:59,284 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:59,287 - core.logger - INFO - Account created: 10016/192.168.1.13 with balance $0.00
+2026-01-28 20:43:59,294 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:59,297 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:59,298 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:59,299 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:59,302 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:59,303 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:59,306 - core.logger - INFO - Account created: 10017/192.168.1.13 with balance $0.00
+2026-01-28 20:43:59,317 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:43:59,320 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:43:59,321 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:45:17,146 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:45:17,152 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:45:17,153 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:45:17,155 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:45:17,158 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:45:17,159 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:45:17,161 - core.logger - INFO - Account created: 10017/192.168.1.13 with balance $0.00
+2026-01-28 20:45:17,164 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:45:17,167 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:45:17,168 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:45:17,169 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:45:17,172 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:45:17,173 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:45:17,176 - core.logger - INFO - Account created: 10018/192.168.1.13 with balance $0.00
+2026-01-28 20:45:17,182 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:45:17,184 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:45:17,185 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:45:17,186 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:45:17,189 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:45:17,190 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:45:17,195 - core.logger - INFO - Account created: 10019/192.168.1.13 with balance $0.00
+2026-01-28 20:45:17,206 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:45:17,209 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:45:17,210 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:48:58,254 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:48:58,260 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:48:58,261 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:48:58,263 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:48:58,266 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:48:58,267 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:48:58,281 - core.logger - INFO - Account created: 10019/192.168.1.13 with balance $0.00
+2026-01-28 20:48:58,283 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:48:58,286 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:48:58,286 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:48:58,287 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:48:58,290 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:48:58,291 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:48:58,294 - core.logger - INFO - Account created: 10020/192.168.1.13 with balance $0.00
+2026-01-28 20:48:58,296 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:48:58,299 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:48:58,300 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:48:58,301 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:48:58,303 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:48:58,304 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:48:58,307 - core.logger - INFO - Account created: 10021/192.168.1.13 with balance $0.00
+2026-01-28 20:48:58,318 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:48:58,320 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:48:58,321 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:49:39,774 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:49:39,781 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:49:39,781 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:49:39,784 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:49:39,787 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:49:39,788 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:49:39,801 - core.logger - INFO - Account created: 10021/192.168.1.13 with balance $0.00
+2026-01-28 20:49:39,804 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:49:39,807 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:49:39,807 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:49:39,808 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:49:39,811 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:49:39,812 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:49:39,815 - core.logger - INFO - Account created: 10022/192.168.1.13 with balance $0.00
+2026-01-28 20:49:39,818 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:49:39,820 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:49:39,821 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:49:39,822 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:49:39,825 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:49:39,826 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:49:39,829 - core.logger - INFO - Account created: 10023/192.168.1.13 with balance $0.00
+2026-01-28 20:49:39,840 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:49:39,843 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:49:39,844 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,826 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,832 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:54:37,833 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,835 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,837 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:54:37,838 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,841 - core.logger - INFO - Account created: 10023/192.168.1.13 with balance $0.00
+2026-01-28 20:54:37,844 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,846 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:54:37,847 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,848 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,850 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:54:37,851 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,854 - core.logger - INFO - Account created: 10024/192.168.1.13 with balance $0.00
+2026-01-28 20:54:37,856 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,859 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:54:37,860 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,861 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,863 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:54:37,864 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,867 - core.logger - INFO - Account created: 10025/192.168.1.13 with balance $0.00
+2026-01-28 20:54:37,877 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,879 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:54:37,880 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:54:37,883 - core.logger - INFO - Account created: 10025/192.168.1.13 with balance $0.00
+2026-01-28 20:54:37,887 - core.logger - INFO - Deposited $20,000.00 to account 10025/192.168.1.13
+2026-01-28 20:54:37,891 - core.logger - INFO - Withdrew $10,000.00 from account 10025/192.168.1.13
+2026-01-28 20:56:56,157 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:56:56,163 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:56:56,164 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:56:56,167 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:56:56,171 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:56:56,171 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:56:56,186 - core.logger - INFO - Account created: 10026/192.168.1.13 with balance $0.00
+2026-01-28 20:56:56,188 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:56:56,191 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:56:56,192 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:56:56,194 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:56:56,197 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:56:56,198 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:56:56,201 - core.logger - INFO - Account created: 10027/192.168.1.13 with balance $0.00
+2026-01-28 20:56:56,204 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:56:56,207 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:56:56,208 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:56:56,209 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:56:56,212 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:56:56,213 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:56:56,216 - core.logger - INFO - Account created: 10028/192.168.1.13 with balance $0.00
+2026-01-28 20:56:56,227 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:56:56,230 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:56:56,231 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:56:56,234 - core.logger - INFO - Account created: 10028/192.168.1.13 with balance $0.00
+2026-01-28 20:56:56,237 - core.logger - INFO - Deposited $20,000.00 to account 10028/192.168.1.13
+2026-01-28 20:56:56,241 - core.logger - INFO - Withdrew $10,000.00 from account 10028/192.168.1.13
+2026-01-28 20:57:26,664 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:57:26,672 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:57:26,673 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:57:26,676 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:57:26,680 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:57:26,682 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:57:26,685 - core.logger - INFO - Account created: 10029/192.168.1.13 with balance $0.00
+2026-01-28 20:57:26,689 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:57:26,692 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:57:26,693 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:57:26,694 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:57:26,697 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:57:26,698 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:57:26,702 - core.logger - INFO - Account created: 10030/192.168.1.13 with balance $0.00
+2026-01-28 20:57:26,705 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:57:26,708 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:57:26,709 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:57:26,710 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:57:26,713 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:57:26,713 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:57:26,717 - core.logger - INFO - Account created: 10031/192.168.1.13 with balance $0.00
+2026-01-28 20:57:26,727 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:57:26,730 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:57:26,731 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:57:26,734 - core.logger - INFO - Account created: 10031/192.168.1.13 with balance $0.00
+2026-01-28 20:57:26,738 - core.logger - INFO - Deposited $20,000.00 to account 10031/192.168.1.13
+2026-01-28 20:57:26,742 - core.logger - INFO - Withdrew $10,000.00 from account 10031/192.168.1.13
+2026-01-28 20:59:50,600 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:59:50,607 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:59:50,608 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:59:50,610 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:59:50,614 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:59:50,614 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:59:50,628 - core.logger - INFO - Account created: 10032/192.168.1.13 with balance $0.00
+2026-01-28 20:59:50,630 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:59:50,633 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:59:50,634 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:59:50,637 - core.logger - INFO - Account created: 10033/192.168.1.13 with balance $0.00
+2026-01-28 20:59:50,641 - core.logger - INFO - Deposited $20,000.00 to account 10033/192.168.1.13
+2026-01-28 20:59:50,644 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:59:50,646 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:59:50,647 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:59:50,650 - core.logger - INFO - Account created: 10034/192.168.1.13 with balance $0.00
+2026-01-28 20:59:50,652 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:59:50,655 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:59:50,656 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:59:50,657 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:59:50,660 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:59:50,661 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:59:50,664 - core.logger - INFO - Account created: 10035/192.168.1.13 with balance $0.00
+2026-01-28 20:59:50,675 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:59:50,678 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 20:59:50,679 - core.logger - INFO - Database initialized successfully
+2026-01-28 20:59:50,682 - core.logger - INFO - Account created: 10035/192.168.1.13 with balance $0.00
+2026-01-28 20:59:50,685 - core.logger - INFO - Deposited $20,000.00 to account 10035/192.168.1.13
+2026-01-28 20:59:50,689 - core.logger - INFO - Withdrew $10,000.00 from account 10035/192.168.1.13

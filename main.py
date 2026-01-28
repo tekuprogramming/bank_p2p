@@ -1,10 +1,5 @@
-from network.p2p import P2PNetwork
-
-HOST = "0.0.0.0"
-PORT = 5000
-
+from gui.monitor import BankMonitorGUI
 
 if __name__ == "__main__":
-    server = P2PNetwork(HOST, PORT)
-    server.start_server()
-
+    app = BankMonitorGUI()
+    app.mainloop()

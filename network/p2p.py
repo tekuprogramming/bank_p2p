@@ -184,7 +184,7 @@ class P2PNetwork:
             logger.error(f"Command {command} error: {e}")
             return self.protocol.format_response('', error="Command incomplete")
 
-    # BC - funguje
+    # BC
     def get_bank_code(self, client_ip: str = None) -> str:
         """
         Gets bank code
@@ -192,7 +192,7 @@ class P2PNetwork:
         """
         return self.bank_code
 
-    # AC - funguje
+    # AC
     def create_account(self, initial_balance: str = "0.0", client_ip: str = None) -> str:
         """
         Creates an account with given initial balance
@@ -245,7 +245,7 @@ class P2PNetwork:
         finally:
             conn.close()
 
-    # AD - možná
+    # AD
     def deposit(self, account_info: str, amount_str: str, client_ip: str = None) -> None:
         """
         Deposits an amount into the account
@@ -381,7 +381,7 @@ class P2PNetwork:
             raise ValueError("Transaction failed")
         finally:
             conn.close()
-
+    # AB
     def get_balance(self, account_info: str, client_ip: str = None) -> str:
         """
         Gets the balance of the account
@@ -479,7 +479,8 @@ class P2PNetwork:
         account_number_str, bank_code = account_info.split("/", 1)
 
         if bank_code != self.get_local_ip():
-            return self.proxy_command('AR', account_info, None, bank_code)
+            #return self.proxy_command('AR', account_info, None, bank_code)
+            raise ValueError("Invalid bank code")
 
         con = self.db.get_connection()
 
@@ -624,7 +625,7 @@ class P2PNetwork:
         try:
             cursor = conn.cursor()
             cursor.execute("""
-                INSERT OR REPLACE INTO known_banks 
+                INSERT OR REPLACE INTO known_banks
                 (bank_code, ip_address, port, last_seen, is_active)
                 VALUES (?, ?, ?, CURRENT_TIMESTAMP, 1)
             """, (bank_code, ip_address, port))
