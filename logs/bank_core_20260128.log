@@ -1,0 +1,22 @@
+2026-01-28 15:34:33,059 - core.logger - INFO - Database initialized successfully
+2026-01-28 15:34:33,067 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 15:34:33,067 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 15:34:55,906 - core.logger - INFO - New connection from 192.168.1.13:56960
+2026-01-28 15:35:02,037 - core.logger - INFO - Received from 192.168.1.13:56960: BC
+2026-01-28 15:35:02,038 - core.logger - INFO - Sent to 192.168.1.13:56960: BC 192.168.1.13
+2026-01-28 15:35:08,825 - core.logger - INFO - Connection closed: 192.168.1.13:56960
+2026-01-28 15:35:27,239 - core.logger - INFO - Server stopped
+2026-01-28 15:38:40,319 - core.logger - INFO - Database initialized successfully
+2026-01-28 15:38:40,326 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 15:38:40,326 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 15:38:41,334 - core.logger - INFO - Server stopped
+2026-01-28 15:38:42,305 - core.logger - INFO - Database initialized successfully
+2026-01-28 15:38:42,309 - core.logger - INFO - Bank node initialized: 192.168.1.13:5000
+2026-01-28 15:38:42,310 - core.logger - INFO - P2P Bank server started on 0.0.0.0:5000
+2026-01-28 15:38:49,760 - core.logger - INFO - New connection from 192.168.1.13:55270
+2026-01-28 15:38:54,405 - core.logger - INFO - Received from 192.168.1.13:55270: BC
+2026-01-28 15:38:54,405 - core.logger - INFO - Sent to 192.168.1.13:55270: BC 192.168.1.13
+2026-01-28 15:39:00,610 - core.logger - INFO - Received from 192.168.1.13:55270: BC
+2026-01-28 15:39:00,610 - core.logger - INFO - Sent to 192.168.1.13:55270: BC 192.168.1.13
+2026-01-28 15:39:05,713 - core.logger - INFO - Connection closed: 192.168.1.13:55270
+2026-01-28 15:39:31,164 - core.logger - INFO - Server stopped

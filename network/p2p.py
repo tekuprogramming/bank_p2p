@@ -14,7 +14,7 @@ logger = setup_core_logging()
 
 class P2PNetwork:
 
-    def __init__(self, host: str = "0.0.0.0", port: int = 65525, timeout: int = 5):
+    def __init__(self, host: str = "0.0.0.0", port: int = 65525, timeout: int = 50):
         self.host = host
         self.port = port
         self.timeout = timeout
@@ -146,7 +146,7 @@ class P2PNetwork:
             logger.error(f"Error handling client {connection_id}: {e}")
             self.send_gui_message("ERROR", f"Client error {connection_id}: {e}")
         finally:
-            client_socket.close()
+            client_socket.close()       #Pokud uživatel nic nepošle, tak se odpojí
             
             if connection_id in self.active_connections:
                 del self.active_connections[connection_id]
@@ -176,7 +176,7 @@ class P2PNetwork:
             return self.protocol.format_response('', error="Internal server error")
 
     # BC
-    def get_bank_code(self) -> str:
+    def get_bank_code(self, client_ip: str = None) -> str:
         """
         Gets bank code
         :return: IP of the bank

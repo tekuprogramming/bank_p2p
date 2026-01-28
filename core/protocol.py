@@ -5,7 +5,7 @@ from typing import Tuple, List, Any
 class BankProtocol:
 
     COMMANDS = {
-        "BC": "bank_get_code",
+        "BC": "get_bank_code",
         "AC": "create_account",
         "AD": "deposit",
         "AW": "withdraw",
